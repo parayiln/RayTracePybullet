@@ -1,0 +1,44 @@
+<robot name="robot">
+
+  <material name="blue">
+  <color rgba="0 1 1 1"/>
+  </material>
+
+  <material name="green">
+  <color rgba="0 .5 0 1"/>
+  </material>
+
+  <material name="red">
+  <color rgba="1 0.6 0 1"/>
+  </material>
+
+  <link name="appletree">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+  				<mesh filename="test_tree.obj" scale="0.1 0.1 0.1"/>
+        </geometry>
+         <material name="white">
+          <color rgba=".58 .3 0 1"/>
+        </material>
+      </visual>
+      <collision concave="yes">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+       <geometry>
+  				<mesh filename="test_tree.obj" scale="0.1 0.1 0.1"/>
+        </geometry>
+      </collision>
+    </link>
+
+
+<link name="world"/>
+
+
+  <joint name="tree_joint" type="fixed">
+    <parent link="world"/>
+    <child link="appletree"/>
+    <origin xyz="0 0 0" rpy="0 0 1.5" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  </robot>
